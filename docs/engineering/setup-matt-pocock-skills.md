@@ -1,14 +1,14 @@
 Quickstart:
 
 ```bash
-npx skills add mattpocock/skills --skill=setup-matt-pocock-skills
+npx skills add jackson-heylion/skills --skill=setup-matt-pocock-skills
 ```
 
 ```bash
 npx skills update setup-matt-pocock-skills
 ```
 
-[Source](https://github.com/mattpocock/skills/tree/main/skills/engineering/setup-matt-pocock-skills)
+[Source](https://github.com/jackson-heylion/skills/tree/main/skills/engineering/setup-matt-pocock-skills)
 
 ## What it does
 
@@ -26,16 +26,18 @@ Reach for it **once per repo, before the first use of any other engineering skil
 
 It leads each with a recommended answer you can accept in a word, and skips whatever it can already infer — so most runs are a couple of quick confirmations:
 
-- **Issue tracker** — where work is tracked, so `triage`/`to-spec`/`to-tickets` know whether to call `gh`, `glab`, write markdown under `.scratch/`, or follow a workflow you describe. GitHub, GitLab, local markdown, or other. (It proposes the one that matches your `git remote`.)
-- **Triage labels** — asked only if the `triage` skill is installed, and then just: keep the default labels (`needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`)? Say no only if your tracker already uses other names, so `triage` applies real ones instead of creating duplicates.
+- **Issue tracker** — where work is tracked, so `triage`/`to-spec`/`to-tickets` know whether to call `gh`, `glab`, create Yunxiao work items, write markdown under `.scratch/`, or follow a workflow you describe. GitHub, GitLab, Alibaba Cloud DevOps (Yunxiao), local markdown, or other. It proposes a tracker from the repo when possible; a Yunxiao project is selected separately because it is not the same thing as a code repository.
+- **Triage labels** — asked only if the `triage` skill is installed. Most trackers map the canonical roles (`needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`) to label names. Yunxiao records immutable label IDs too; when those are unavailable, publishing can use a Markdown state marker, but reliable triage queries wait until the IDs are configured.
 - **Domain docs** — assumed single-context (one `CONTEXT.md` + `docs/adr/` at the root), which fits almost every repo; it only raises a multi-context map when it spots monorepo signals.
 
 The output is a set of files under `docs/agents/` — `issue-tracker.md`, `domain.md`, and `triage-labels.md` when `triage` is installed — plus an `## Agent skills` block pointing to them in whichever of `CLAUDE.md` / `AGENTS.md` the repo already uses. Those files are the shared substrate the rest of the toolkit stands on.
 
+For Yunxiao, setup discovers the organization, project, `Req`/`Task`/`Bug` work item types, required fields, assignee, and terminal workflow states through the project-management tools. It records IDs but never the access token. Specs become `Req` work items, tickets become `Task` work items, and ticket dependencies fall back to human-visible `Blocked by` references unless a concrete relation-create tool is available.
+
 ## It's working if
 
 - `issue-tracker.md` and `domain.md` land under `docs/agents/` (plus `triage-labels.md` when `triage` is installed), and an `## Agent skills` section appears in your `CLAUDE.md` or `AGENTS.md`.
-- The tracker it proposes matches your real `git remote`, and the labels match strings that already exist in your repo.
+- The tracker it proposes matches the real project, and label names or IDs match values that already exist instead of invented identifiers.
 - Afterwards, `triage` and `to-tickets` act on the right place with the right labels instead of asking or guessing.
 
 ## Where it fits

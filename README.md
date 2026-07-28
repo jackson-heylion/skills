@@ -18,6 +18,8 @@ Developing real applications is hard. Approaches like GSD, BMAD, and Spec-Kit tr
 
 These skills are designed to be small, easy to adapt, and composable. They work with any model. They're based on decades of engineering experience. Hack around with them. Make them your own. Enjoy.
 
+> This fork adds first-class Alibaba Cloud DevOps (Yunxiao) project-management support to the existing setup, spec, ticket, triage, and wayfinding flows. Install this fork with `npx skills@latest add jackson-heylion/skills`; the official marketplace plugin still installs the upstream version.
+
 If you want to keep up with changes to these skills, and any new ones I create, you can join ~60,000 other devs on my newsletter:
 
 [Sign Up To The Newsletter](https://www.aihero.dev/s/skills-newsletter)
@@ -49,7 +51,7 @@ It's in Claude Code's official marketplace, so there's nothing to add first, and
 <summary><strong>Codex, and other agents</strong></summary>
 
 ```bash
-npx skills@latest add mattpocock/skills
+npx skills@latest add jackson-heylion/skills
 ```
 
 Pick the skills you want, and which coding agents to install them on. **The installer lets you choose which skills to take — make sure `setup-matt-pocock-skills` is one of them.**
@@ -64,7 +66,7 @@ A native Codex plugin is on the roadmap — see [`.agents/adr/0002-ship-as-a-cla
 Use the same installer, on any agent — including Claude Code:
 
 ```bash
-npx skills@latest add mattpocock/skills
+npx skills@latest add jackson-heylion/skills
 ```
 
 It writes the skills into your repo as ordinary files you own and can edit. Nothing updates behind your back; pull my latest changes when you want them with `npx skills update`.
@@ -75,7 +77,7 @@ It writes the skills into your repo as ordinary files you own and can edit. Noth
 
 In your agent, run it once per repo. It will:
 
-- Ask you which issue tracker you want to use (GitHub, Linear, or local files)
+- Ask you which issue tracker you want to use (GitHub, GitLab, Alibaba Cloud DevOps/Yunxiao, local files, or a custom tracker)
 - Ask you what labels you apply to tickets when you triage them (`/triage` uses labels)
 - Ask you where you want to save any docs we create
 

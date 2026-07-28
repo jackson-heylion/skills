@@ -1,14 +1,14 @@
 Quickstart:
 
 ```bash
-npx skills add mattpocock/skills --skill=to-spec
+npx skills add jackson-heylion/skills --skill=to-spec
 ```
 
 ```bash
 npx skills update to-spec
 ```
 
-[Source](https://github.com/mattpocock/skills/tree/main/skills/engineering/to-spec)
+[Source](https://github.com/jackson-heylion/skills/tree/main/skills/engineering/to-spec)
 
 ## What it does
 
@@ -24,7 +24,7 @@ Reach for it once a change has been talked through and the domain language is se
 
 ## Prerequisites
 
-`to-spec` publishes into your issue tracker, so [setup-matt-pocock-skills](https://aihero.dev/skills-setup-matt-pocock-skills) must have configured the tracker and triage labels for this repo first. It applies the `ready-for-agent` label itself — no separate triage pass needed.
+`to-spec` publishes into your issue tracker, so [setup-matt-pocock-skills](https://aihero.dev/skills-setup-matt-pocock-skills) must have configured the tracker and triage roles for this repo first. It applies the configured `ready-for-agent` representation itself — a label name, immutable label ID, or documented fallback — so no separate triage pass is needed.
 
 ## What the spec includes
 

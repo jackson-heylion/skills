@@ -1,14 +1,14 @@
 Quickstart:
 
 ```bash
-npx skills add mattpocock/skills --skill=triage
+npx skills add jackson-heylion/skills --skill=triage
 ```
 
 ```bash
 npx skills update triage
 ```
 
-[Source](https://github.com/mattpocock/skills/tree/main/skills/engineering/triage)
+[Source](https://github.com/jackson-heylion/skills/tree/main/skills/engineering/triage)
 
 ## What it does
 
@@ -24,7 +24,7 @@ Reach for it when your issue tracker has raw, unevaluated reports and you want t
 
 ## Prerequisites
 
-`triage` reads and writes your issue tracker, so [setup-matt-pocock-skills](https://aihero.dev/skills-setup-matt-pocock-skills) must have configured the tracker and the label mapping first. The role names above are **canonical** — the actual label strings in your tracker may differ, and that mapping is what setup provides. The config also decides whether external PRs count as a request surface, and who counts as external.
+`triage` reads and writes your issue tracker, so [setup-matt-pocock-skills](https://aihero.dev/skills-setup-matt-pocock-skills) must have configured the tracker and the role mapping first. The role names above are **canonical** — a tracker may use label names, immutable label IDs, or native work item types, and that mapping is what setup provides. The config also decides whether external PRs count as a request surface, and who counts as external. A fallback that cannot query roles reliably is suitable for publishing but not for claiming that the triage queue is complete.
 
 ## A PR is an issue with attached code
 
